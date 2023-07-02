@@ -1,49 +1,74 @@
-# 3D_Maze
-![maze gif](https://user-images.githubusercontent.com/88714347/171422634-8adc8811-2559-4ba1-967f-4caf909c3f22.gif)
-- The Maze is a 3D Maze game that uses ray casting to render a 2D map into a 3D navigable world!.
-- The Maze was written was written in C ussing SDL2 library. Deveploment was performed using Ubuntu 14.04 LTS - gcc (Ubuntu 4.8.4-2ubuntu1~14.04) 4.8.4.
-- It runs on Mac OS X and Linux/Ubuntu. The game uses the technique raycasting to create the apparent 3D nature of the maze.
-# About SDL2
-- Simple DirectMedia Layer is a cross-platform development library designed to provide low level access to audio, keyboard, mouse, joystick, and graphics hardware via OpenGL and Direct3D. It is used by video playback software, emulators, and popular games including Valve's award winning catalog and many Humble Bundle games. for more information on [SDL2](https://en.wikipedia.org/wiki/Simple_DirectMedia_Layer)
+# 3D Maze
+### Creating a 3D maze with raycasting
+![textured_1](https://github.com/hicarrie/maze/blob/master/screenshots/textured_1.png)
+-----
 
-# Requirements to Play
-  - Linux/ubuntu or Macos
-  - SDL2 and its sdl_image
-# Installation
+### How to Compile and Run
+- [SDL2](https://www.libsdl.org/download-2.0.php) and [SDL2_image](https://www.libsdl.org/projects/SDL_image/) are required to compile and use this program
+- Compile with `gcc 4.8.4` with the following flags:
+    ``gcc -O2 -g -Wall -Werror -Wextra -pedantic -Isrc/headers *.c -lSDL2 -lSDL2_image -lm -o maze `sdl2-config --cflags --libs` `` OR `make -f Makefile`
+- Run the maze: `./maze` or `./maze maps/<map_name>`
+- Disable textures: `./maze no_tex` or `./maze maps/<map_name> no_tex`
 
- - Sdl2 installation
-download the installation script [install_SDL2.sh](https://s3.amazonaws.com/intranet-projects-files/holbertonschool-low_level_programming/graphics_programming/install_SDL2.sh) and run it in your ubuntu Terminal as follows:
-root@h:cd ~/Downloads$ ls
-install_SDL2.sh
-root@h:cd ~/Downloads$chmod 755 install_SDL2.sh
-root@h:cd ~/Downloads$sudo ./install_SDL2.sh
+-----
 
-# Play the game
- - clone the [github repository](https://github.com/Susiniosgit/3D_Maze.git)
- - Compile all .c files in the maze directory:
-  ```
-  gcc -Wall -Werror -Wextra -pedantic ./src/*.c -lm $(sdl2-config --cflags --libs) -lSDL_image -o maze
-   ```
- - Execute ./mazea and play game.
- - Use up and down arrow keys to move forward and backward (keys w and s serve the same function)
- - Use right and left arrow keys to turn the camera arround (keys d and a serve the same function)
-# Controls
- W or up arrow key - Moving forward
- S or down arrow - Moving backward
- left arrow key - to rotate the player in counter clock wise direction
- right arrow key - to rotate the player in clock wise direction
+### Synopsis
+This 3D maze uses raycasting to draw the maze walls, utilizing [LodeV's](http://lodev.org/cgtutor/raycasting.html) method of using vectors to calculate ray length. By default the maze uses textures but textures can be disabled on execution.
 
-# Flow chart
-![Capture](https://user-images.githubusercontent.com/88714347/171421868-d6a7a3d6-6acd-495e-9506-7ab381bba5a4.JPG)
-# project Demo
- [![3D Maze](https://img.youtube.com/vi/y5FlT2oApag/0.jpg)](https://www.youtube.com/watch?v=y5FlT2oApag)
-# Authors
-- Susinios legesse(https://github.com/Susiniosgit)
-- Sentayehu Tilahun(https://github.com/sentayehut)
-- Ephrem Abebe(https://github.com/ephayeabe)
+#### Controls
+- `W` : move forward
+- `S` : move backward
+- `A` : rotate camera left
+- `D` : rotate camera right
+- `Q` : strafe left
+- `E` : strafe right
+- `F` : toggle fullscreen
+- `ESC` : quit
 
+![textured_3](https://github.com/hicarrie/maze/blob/master/screenshots/textured_3.png)
 
+#### Maps
+The maps are defined in 2D arrays in text files, which are parsed when passed as an argument to the maze executable. `0` represents open space, all other integers are drawn as walls.
 
+Example:
+```
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1
+1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1
+1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1
+1 0 0 0 0 0 2 2 2 2 2 0 0 0 0 3 0 3 0 3 0 0 0 1
+1 0 0 0 0 0 2 0 0 0 2 0 0 0 0 0 0 0 0 0 0 0 0 1
+1 0 0 0 0 0 2 0 0 0 2 0 0 0 0 3 0 0 0 3 0 0 0 1
+1 0 0 0 0 0 2 0 0 0 2 0 0 0 0 0 0 0 0 0 0 0 0 1
+1 0 0 0 0 0 2 2 0 2 2 0 0 0 0 3 0 3 0 3 0 0 0 1
+1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1
+1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1
+1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1
+1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1
+1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1
+1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1
+1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1
+1 4 4 4 4 4 4 4 4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1
+1 4 0 4 0 0 0 0 4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1
+1 4 0 0 0 0 5 0 4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1
+1 4 0 4 0 0 0 0 4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1
+1 4 0 4 4 4 4 4 4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1
+1 4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1
+1 4 4 4 4 4 4 4 4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+```
 
+### To-Do
+- Improved map parser
+- Better error handling
+- More textures
+- Enemies / obstacles / objects
+- Maze goal that loads next map
+- Rain
 
-
+### Resources
+- [SDL2 API](https://wiki.libsdl.org/CategoryAPI)
+- [LazyFoo Beginning Game Programming](http://lazyfoo.net/tutorials/SDL/index.php)
+- [Ray-Casting Tutorial For Game Development And Other Purposes by F. Permadi](http://permadi.com/1996/05/ray-casting-tutorial-table-of-contents/)
+- [LodeV Raycasting Tutorial](http://lodev.org/cgtutor/raycasting.html)
+- [Game Engine Black Book](https://www.amazon.com/Game-Engine-Black-Book-Wolfenstein/dp/1539692876)
