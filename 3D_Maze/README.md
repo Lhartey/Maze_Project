@@ -85,7 +85,7 @@ This maze game project is part of my portfolio for Holberton School, where I hav
 
 Thanks for taking your time to read if you have any questions, contribution or reviews you can contact me through my social media links below.
 
--			![thank-you](https://github.com/Lhartey/Maze_Project/blob/master/3D_Maze/Images/thank-you.gif)
+![thank-you](https://github.com/Lhartey/Maze_Project/blob/master/3D_Maze/Images/thank-you.gif)
 -----
 
 ### Author/Developer
