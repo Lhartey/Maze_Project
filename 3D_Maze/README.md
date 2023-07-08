@@ -1,6 +1,5 @@
 # 3D Maze
-![1_2aMuMsqUbC9Dvb82lKId_w](https://github.com/Lhartey/Maze_Project/blob/master/3D_Maze/Images/1_2aMuMsqUbC9Dvb82lKId_w.jpg)
-COVER PHOTO
+![1_2aMuMsqUbC9Dvb82lKId_w](https://github.com/Lhartey/Maze_Project/blob/master/3D_Maze/Images/1_2aMuMsqUbC9Dvb82lKId_w.jpg) COVER PHOTO
 -----
 
 ### Creating a 3D maze with raycasting
@@ -81,13 +80,13 @@ This maze game project is part of my portfolio for Holberton School, where I hav
 ### Project Summary
 
 ![Screenshot(10)](https://github.com/Lhartey/Maze_Project/blob/master/3D_Maze/Images/Screenshot(10).png)
------
 
-This maze game project is part of my portfolio for Holberton School, where I have been honing my programming skills and expanding my knowledge in various areas of software development. It demonstrates my ability to design and develop interactive web applications, showcasing both my technical proficiency and creativity.
+This maze game project is part of my portfolio for Holberton School, where I have been honing my programming skills and expanding my knowledge in various areas of software development. It demonstrates my ability to design and develop interactive web applications, showcasing both my technical proficiency and creativity. 
+
 Thanks for taking your time to read if you have any questions, contribution or reviews you can contact me through my social media links below.
------
 
 ![thank-you](https://github.com/Lhartey/Maze_Project/blob/master/3D_Maze/Images/thank-you.gif)
+-----
 
 ### Author
 - Augustine .A Lartey
@@ -101,4 +100,4 @@ Thanks for taking your time to read if you have any questions, contribution or r
 - [Ray-Casting Tutorial For Game Development And Other Purposes by F. Permadi](http://permadi.com/1996/05/ray-casting-tutorial-table-of-contents/)
 - [LodeV Raycasting Tutorial](http://lodev.org/cgtutor/raycasting.html)
 - [Game Engine Black Book](https://www.amazon.com/Game-Engine-Black-Book-Wolfenstein/dp/1539692876)
-- ![John Watson](https://www.youtube.com/@johnwatson2675/streams)
+- [John Watson](https://www.youtube.com/@johnwatson2675/streams)
