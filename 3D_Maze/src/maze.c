@@ -1,4 +1,4 @@
-#include "maze.h"
+#include "../headers/maze.h"
 
 /* global variables */
 SDL_Window *window;

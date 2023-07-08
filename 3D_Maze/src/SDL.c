@@ -1,4 +1,4 @@
-#include "maze.h"
+#include "../headers/maze.h"
 
 /**
  * initSDL - initializes SDL, window, and renderer
